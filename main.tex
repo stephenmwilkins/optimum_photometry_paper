@@ -1,0 +1,169 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+% Names of things
+\newcommand{\bluetides}{\mbox{\sc{BlueTides}}}
+\newcommand{\ceagle}{\mbox{\sc{C-Eagle}}}
+\newcommand{\eagle}{\mbox{\sc{Eagle}}}
+\newcommand{\euclid}{\mbox{\it Euclid}}
+\newcommand{\hst}{\mbox{\it HST}}
+\newcommand{\jwst}{\mbox{\it JWST}}
+\newcommand{\flares}{\mbox{\sc Flares}}
+\newcommand{\flare}{\mbox{\sc Flare}}
+\newcommand{\rst}{\mbox{\it Roman Space Telescope}}
+% Units
+\newcommand{\Msun}{M$_{\odot}$}
+\newcommand{\hMsun}{h$^{-1}$M$_{\odot}$}
+\newcommand{\hMpc}{h$^{-1}$Mpc}
+\newcommand{\um}{$\mu$m}
+\newcommand{\eg}[0]{$\textnormal{e.g. }$}
+\newcommand{\ie}[0]{$\textnormal{i.e. }$}
+% Comments
+\newcommand{\steve}[1]{{\color{red}#1}}
+\newcommand{\peter}[1]{{\color{green}#1}}
+\newcommand{\chris}[1]{{\color{cyan}#1}}
+\newcommand{\comment}[1]{{\color{yellow}#1}}
+%citations
+\defcitealias{lovell2020}{\flares I}
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[FLARES ?]{First Light And Reionisation Epoch Simulations \\(FLARES) ?: Predictions for the Euclid Spacecraft}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Kuusisto et al.]{Jussi Kuusisto$^{1}$\thanks{E-mail: A.Payyoor-Vijayan@sussex.ac.uk},
+Stephen M. Wilkins$^{1}$,
+Aswin P. Vijayan$^{1}$
+Christopher C. Lovell$^{2,1}$,
+\newauthor
+Peter A. Thomas$^{1}$,
+Dimitrios Irodotou$^{1}$,
+Will Roper$^{1}$,
+\\
+% List of institutions
+$^{1}$Astronomy Centre, University of Sussex, Falmer, Brighton BN1 9QH, UK\\
+$^{2}$Centre for Astrophysics Research, School of Physics, Astronomy $\&$ Mathematics, \\University of Hertfordshire, Hatfield AL10 9AB, UK\\
+$^{3}$Department of Physics, Kavli Institute for Astrophysics and Space Research, Massachusetts Institute of Technology,\\Cambridge, MA 02139, USA
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2015}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+We present the photometric properties of galaxies in the First Light and Reionisation Epoch Simulations. The simulations trace the evolution of galaxies in a range of overdensities through the Epoch of Reionistion (EoR). With a novel weighting scheme we combine these overdensities, extending significantly the dynamic range of observed composite distribution functions compared to periodic simulation boxes. \flares\, predict a significantly larger number of intrinsically bright galaxies, however this can be explained through a simple model which links dust-attenuation to the metal content of the interstellar medium, using a line-of-sight extinction model. With this simple dust model we present the photometric properties of the \flares\, galaxies. We show that the UV luminosity function of \flares\, match the observations at all redshifts ($z=10\to5$). This function is fit by Schechter and double power-law functional forms, with the latter being favoured at higher redshifts ($z>8$) by the \flares\, composite UV LF. We also present predictions for the UV continuum slope as well as the attenuation in the UV. The impact of environment on the UV LF is also explored. We then present the line luminosity and equivalent widths of some prominent nebular emission lines of the galaxies. In addition to predicting a range of photometric properties we make available a public catalogue of the \flares\, galaxies including their physical and photometric properties.
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+galaxies: general -- galaxies: evolution -- galaxies: formation -- galaxies: high-redshift -- galaxies: photometry
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\input intro
+\input conclusion
+
+\section*{Acknowledgements}
+We thank the \eagle\, team for their efforts in developing the \eagle\, simulation code. We wish to thank Scott Kay and Adrian Jenkins for their invaluable help getting up and running with the Eagle resimulation code. We would also like to thank Desika Narayanan for providing the extinction curve used in their dust attenuation studies.
+
+We also wish to acknowledge the following open source software packages used in the analysis: scipy \citep{2020SciPy-NMeth}, Astropy \citep{robitaille_astropy:_2013} and matplotlib \citep{Hunter:2007}.
+
+This work used the DiRAC@Durham facility managed by the Institute for Computational Cosmology on behalf of the STFC DiRAC HPC Facility (www.dirac.ac.uk). The equipment was funded by BEIS capital funding via STFC capital grants ST/K00042X/1, ST/P002293/1, ST/R002371/1 and ST/S002502/1, Durham University and STFC operations grant ST/R000832/1. DiRAC is part of the National e-Infrastructure.
+
+APV acknowledges the support of of his PhD studentship from UK STFC DISCnet. CCL acknowledges support from the Royal Society under
+grant RGF/EA/181016. PAT acknowledges support from the Science and Technology Facilities Council (grant number ST/P000525/1).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+\bibliographystyle{mnras}
+\bibliography{bib} % if your bibtex file is called example.bib
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Supplementary Information}
+We also provide a photometric catalogue of the galaxies in the different regions at ...url...
+
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+
+% \appendix
+%
+% \input appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+% End of mnras_template.tex
